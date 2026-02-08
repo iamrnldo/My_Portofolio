@@ -2,8 +2,8 @@ import { Code2, Palette, Rocket, Users } from "lucide-react";
 
 const stats = [
   { label: "Years Experience", value: "3+" },
-  { label: "Projects Completed", value: "50+" },
-  { label: "Happy Clients", value: "30+" },
+  { label: "Repositories Projects", value: "50+" },
+  { label: "Happy Clients", value: "6+" },
   { label: "Technologies", value: "9+" },
 ];
 
