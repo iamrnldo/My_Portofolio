@@ -34,7 +34,7 @@ const skills = [
     icon: FaJsSquare,
     color: "from-yellow-400 to-yellow-600",
     shadow: "shadow-yellow-500/20",
-    level: 88,
+    level: 80,
     category: "Frontend",
   },
   {
@@ -42,7 +42,7 @@ const skills = [
     icon: FaReact,
     color: "from-cyan-400 to-blue-500",
     shadow: "shadow-cyan-500/20",
-    level: 85,
+    level: 75,
     category: "Frontend",
   },
   {
@@ -74,7 +74,7 @@ const skills = [
     icon: FaNodeJs,
     color: "from-green-500 to-emerald-600",
     shadow: "shadow-green-500/20",
-    level: 82,
+    level: 75,
     category: "Backend",
   },
   {
@@ -82,7 +82,7 @@ const skills = [
     icon: SiExpress,
     color: "from-gray-400 to-gray-600",
     shadow: "shadow-gray-500/20",
-    level: 80,
+    level: 75,
     category: "Backend",
   },
 ];

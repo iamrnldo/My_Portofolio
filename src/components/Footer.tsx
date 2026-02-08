@@ -52,7 +52,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-10 pt-8 border-t border-white/5 text-center">
           <p className="text-gray-500 text-sm flex items-center justify-center gap-1">
-            © {new Date().getFullYear()} DevFolio. Made with{" "}
+            © {new Date().getFullYear()} IAMRNLDO. Made with{" "}
             <Heart size={14} className="text-red-500 fill-red-500" /> and lots
             of ☕
           </p>

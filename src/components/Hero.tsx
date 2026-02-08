@@ -90,7 +90,11 @@ export function Hero() {
               label: "GitHub",
               href: "https://github.com/iamrnldo",
             },
-            { icon: Linkedin, label: "LinkedIn", href: "#" },
+            {
+              icon: Linkedin,
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/in/iamrnldo/",
+            },
             { icon: Mail, label: "Email", href: "#contact" },
           ].map((social) => (
             <a

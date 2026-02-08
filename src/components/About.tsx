@@ -77,7 +77,7 @@ export function About() {
                   {"  "}
                   <span className="text-green-300">name</span>
                   <span className="text-white">:</span>{" "}
-                  <span className="text-amber-300">"Web Developer"</span>
+                  <span className="text-amber-300">"Ronald Budi Abdul Wahid"</span>
                   <span className="text-white">,</span>
                   {"\n"}
                   {"  "}
