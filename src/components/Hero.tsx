@@ -210,7 +210,7 @@ function TypingSnippet({
           </span>
         ))}
         <span
-          className={`inline-block w-[5px] h-[12px] sm:h-[13px] ${snippet.cursorColor} ml-[1px] align-middle rounded-[1px] transition-opacity duration-100`}
+          className={`inline-block w-[5px] h-3 sm:h-[13px] ${snippet.cursorColor} ml-px align-middle rounded-[1px] transition-opacity duration-100`}
           style={{
             opacity: showCursor || isTyping ? 1 : 0,
             verticalAlign: "text-bottom",
@@ -378,13 +378,13 @@ function TechOrbit() {
         <div className="absolute w-14 h-14 sm:w-18 sm:h-18 bg-purple-500/6 rounded-full blur-2xl" />
 
         <div
-          className="absolute w-52 h-52 sm:w-72 sm:h-72 md:w-96 md:h-96 border border-white/[0.03] rounded-full pointer-events-none"
+          className="absolute w-52 h-52 sm:w-72 sm:h-72 md:w-96 md:h-96 border border-white/3 rounded-full pointer-events-none"
           style={{
             transform: "rotateX(35deg) rotateZ(0deg)",
           }}
         />
         <div
-          className="absolute w-52 h-52 sm:w-72 sm:h-72 md:w-96 md:h-96 border border-dashed border-white/[0.02] rounded-full pointer-events-none"
+          className="absolute w-52 h-52 sm:w-72 sm:h-72 md:w-96 md:h-96 border border-dashed border-white/2 rounded-full pointer-events-none"
           style={{
             transform: "rotateX(35deg) rotateZ(0deg) scale(1.12)",
           }}
@@ -401,8 +401,8 @@ function TechOrbit() {
               style={{ willChange: "transform, opacity, filter" }}
             >
               <div className="relative">
-                <div className="absolute -inset-1 sm:-inset-1.5 bg-gradient-to-br from-cyan-400/25 to-purple-500/25 rounded-lg sm:rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative w-9 h-9 sm:w-11 sm:h-11 md:w-13 md:h-13 rounded-lg sm:rounded-xl bg-gray-900/90 border border-white/[0.06] group-hover:bg-white/[0.08] group-hover:border-white/[0.2] flex items-center justify-center backdrop-blur-sm transition-all duration-300 shadow-lg shadow-black/30">
+                <div className="absolute -inset-1 sm:-inset-1.5 bg-linear-to-br from-cyan-400/25 to-purple-500/25 rounded-lg sm:rounded-xl blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative w-9 h-9 sm:w-11 sm:h-11 md:w-13 md:h-13 rounded-lg sm:rounded-xl bg-gray-900/90 border border-white/6 group-hover:bg-white/8 group-hover:border-white/20 flex items-center justify-center backdrop-blur-sm transition-all duration-300 shadow-lg shadow-black/30">
                   <img
                     src={tech.icon}
                     alt={tech.name}
@@ -452,8 +452,8 @@ export function Hero() {
         {/* Avatar / Logo */}
         <div className="mb-6 sm:mb-8 md:mb-10 inline-flex">
           <div className="relative group cursor-pointer">
-            <div className="absolute -inset-1.5 sm:-inset-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full blur-md sm:blur-lg opacity-60 group-hover:opacity-100 transition-all duration-500 animate-spin-slow" />
-            <div className="absolute -inset-1.5 sm:-inset-2 bg-gradient-to-r from-purple-600 via-cyan-400 to-blue-500 rounded-full blur-md sm:blur-lg opacity-0 group-hover:opacity-60 transition-all duration-500 animate-spin-slow" />
+            <div className="absolute -inset-1.5 sm:-inset-2 bg-linear-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full blur-md sm:blur-lg opacity-60 group-hover:opacity-100 transition-all duration-500 animate-spin-slow" />
+            <div className="absolute -inset-1.5 sm:-inset-2 bg-linear-to-r from-purple-600 via-cyan-400 to-blue-500 rounded-full blur-md sm:blur-lg opacity-0 group-hover:opacity-60 transition-all duration-500 animate-spin-slow" />
             <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full bg-gray-900 border-2 border-white/10 group-hover:border-white/20 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:scale-105">
               <img
                 src={logo2}
@@ -466,7 +466,7 @@ export function Hero() {
 
         {/* Badge */}
         <div className="flex justify-center mb-5 sm:mb-6 md:mb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-md hover:bg-white/[0.07] hover:border-white/[0.15] transition-all duration-300 cursor-default">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 rounded-full bg-white/4 border border-white/8 backdrop-blur-md hover:bg-white/[0.07] hover:border-white/15 transition-all duration-300 cursor-default">
             <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-emerald-400" />
@@ -489,14 +489,14 @@ export function Hero() {
           <h1 className="text-[2rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white">
             Hi, I&apos;m{" "}
             <span className="relative">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Ronald
               </span>
             </span>
             <br className="sm:hidden" />
             <span className="hidden sm:inline"> </span>
             <span className="relative">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                 Budi Abdul Wahid
               </span>
             </span>
@@ -513,9 +513,9 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-12 md:mb-14 max-w-md sm:max-w-none  mx-auto">
           <a
             href="#projects"
-            className="group relative w-full sm:w-auto px-7 sm:px-8 md:px-10 py-3.5 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl sm:rounded-2xl hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-[1.03] active:scale-[0.97] flex items-center justify-center gap-2 text-sm sm:text-base overflow-hidden"
+            className="group relative w-full sm:w-auto px-7 sm:px-8 md:px-10 py-3.5 sm:py-4 bg-linear-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl sm:rounded-2xl hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-[1.03] active:scale-[0.97] flex items-center justify-center gap-2 text-sm sm:text-base overflow-hidden"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+            <span className="absolute inset-0 bg-linear-to-r from-white/0 via-white/10 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
             <span className="relative flex items-center gap-2">
               View My Work
               <ArrowDown
@@ -526,7 +526,7 @@ export function Hero() {
           </a>
           <a
             href="#contact"
-            className="w-full sm:w-auto px-7 sm:px-8 md:px-10 py-3.5 sm:py-4 bg-white/[0.04] text-white font-semibold rounded-xl sm:rounded-2xl border border-white/[0.08] hover:bg-white/[0.08] hover:border-white/[0.18] transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] backdrop-blur-md text-sm sm:text-base text-center"
+            className="w-full sm:w-auto px-7 sm:px-8 md:px-10 py-3.5 sm:py-4 bg-white/4 text-white font-semibold rounded-xl sm:rounded-2xl border border-white/8 hover:bg-white/8 hover:border-white/18 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] backdrop-blur-md text-sm sm:text-base text-center"
           >
             Get In Touch
           </a>
@@ -564,7 +564,7 @@ export function Hero() {
                   : undefined
               }
               aria-label={social.label}
-              className={`group w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-gray-500 ${social.hoverColor} hover:bg-white/[0.08] transition-all duration-300 hover:scale-110 hover:-translate-y-0.5`}
+              className={`group w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl bg-white/4 border border-white/8 flex items-center justify-center text-gray-500 ${social.hoverColor} hover:bg-white/8 transition-all duration-300 hover:scale-110 hover:-translate-y-0.5`}
             >
               <social.icon
                 size={16}
