@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react";
-
 import logo2 from "../img/logo3.png";
-
 const techStack = [
   {
     name: "React",
@@ -198,7 +196,7 @@ function TypingSnippet({
         className={`text-[8px] font-mono font-bold uppercase tracking-widest ${snippet.color} block mb-1`}
         style={{ opacity: 0.6 }}
       >
-        {`// ${snippet.lang}`}
+        {snippet.lang}
       </span>
       <pre
         className={`text-[10px] sm:text-[11px] font-mono leading-relaxed ${snippet.color} whitespace-pre select-none`}
@@ -489,33 +487,32 @@ export function Hero() {
           <h1 className="text-[2rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white">
             Hi, I&apos;m{" "}
             <span className="relative">
-              <span className="bg-linear-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Ronald
               </span>
             </span>
             <br className="sm:hidden" />
             <span className="hidden sm:inline"> </span>
             <span className="relative">
-              <span className="bg-linear-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                 Budi Abdul Wahid
               </span>
             </span>
           </h1>
         </div>
 
+        {/* Description and CTAs */}
         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400/90 max-w-[320px] sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto mb-8 sm:mb-10 md:mb-12 leading-relaxed sm:leading-relaxed">
           I craft modern, responsive, and performant web applications with clean
-          code and pixel-perfect design. Turning ideas into elegant digital
-          experiences.
+          code and pixel-perfect design.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-12 md:mb-14 max-w-md sm:max-w-none  mx-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-12 md:mb-14 max-w-md sm:max-w-none mx-auto">
           <a
             href="#projects"
-            className="group relative w-full sm:w-auto px-7 sm:px-8 md:px-10 py-3.5 sm:py-4 bg-linear-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl sm:rounded-2xl hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-[1.03] active:scale-[0.97] flex items-center justify-center gap-2 text-sm sm:text-base overflow-hidden"
+            className="group relative w-full sm:w-auto px-7 sm:px-8 md:px-10 py-3.5 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl sm:rounded-2xl hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-cyan-500/20 hover:shadow-xl hover:shadow-cyan-500/30 hover:scale-[1.03] active:scale-[0.97] flex items-center justify-center gap-2 text-sm sm:text-base overflow-hidden"
           >
-            <span className="absolute inset-0 bg-linear-to-r from-white/0 via-white/10 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
+            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
             <span className="relative flex items-center gap-2">
               View My Work
               <ArrowDown

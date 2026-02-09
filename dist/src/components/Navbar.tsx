@@ -19,7 +19,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -60,7 +59,7 @@ export function Navbar() {
               ))}
               <a
                 href="#contact"
-                className="ml-4 px-5 py-2.5 bg-linear-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold rounded-xl hover:from-cyan-400 hover:to-blue-500 transition-all shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 active:scale-95"
+                className="ml-4 px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold rounded-xl hover:from-cyan-400 hover:to-blue-500 transition-all shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 active:scale-95"
               >
                 Hire Me
               </a>
@@ -93,13 +92,12 @@ export function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu - Full screen with proper background */}
+      {/* Mobile Menu */}
       <div
         className={`md:hidden fixed inset-0 z-40 transition-transform duration-300 ease-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Overlay */}
         <div
           className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
             isOpen ? "opacity-100" : "opacity-0"
@@ -107,7 +105,6 @@ export function Navbar() {
           onClick={() => setIsOpen(false)}
         />
 
-        {/* Menu Panel */}
         <div className="absolute top-0 right-0 h-full w-full sm:w-80 bg-gray-950 border-l border-white/5">
           <div className="px-6 py-20 space-y-2">
             {navLinks.map((link, index) => (
@@ -132,7 +129,7 @@ export function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setIsOpen(false)}
-                className={`block text-center px-5 py-3 bg-linear-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl transition-all hover:scale-105 active:scale-95 transform ${
+                className={`block text-center px-5 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl transition-all hover:scale-105 active:scale-95 transform ${
                   isOpen
                     ? "translate-y-0 opacity-100"
                     : "translate-y-8 opacity-0"
@@ -151,4 +148,3 @@ export function Navbar() {
     </>
   );
 }
-
