@@ -21,6 +21,7 @@ export function Contact() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          {/* Left Side: Contact Info */}
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-white mb-4">
@@ -34,10 +35,10 @@ export function Contact() {
             <div className="flex items-center gap-4">
               <Mail className="text-cyan-400" size={24} />
               <a
-                href="mailto:hello@iamrnldo.dev"
+                href="mailto:iamrnldo@gmail.com"
                 className="text-gray-300 hover:text-cyan-400 transition-colors"
               >
-                hello@iamrnldo.dev
+                iamrnldo@gmail.com
               </a>
             </div>
             <div className="flex gap-4">
@@ -60,20 +61,29 @@ export function Contact() {
             </div>
           </div>
 
-          <form className="space-y-6">
+          {/* Right Side: The Form */}
+          {/* 1. Add action and method here */}
+          <form
+            action="https://formspree.io/f/maqdepza"
+            method="POST"
+            className="space-y-6"
+          >
             <input
               type="text"
+              name="name" // Required: Adds a label to the data
               placeholder="Your Name"
               className="w-full px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 transition"
               required
             />
             <input
               type="email"
+              name="email" // Required: Ensures reply-to works
               placeholder="Your Email"
               className="w-full px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 transition"
               required
             />
             <textarea
+              name="message" // Required: The content of the email
               placeholder="Your Message"
               rows={6}
               className="w-full px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 transition resize-none"
@@ -85,9 +95,6 @@ export function Contact() {
             >
               Send Message <Send size={18} />
             </button>
-            <p className="text-xs text-gray-500 text-center">
-              Form submission not connected yet — use email above for now.
-            </p>
           </form>
         </div>
       </div>
