@@ -11,9 +11,9 @@ export function App() {
     <div className="bg-gray-950 text-white antialiased">
       <Navbar />
       <Hero />
+      <Projects />
       <About />
       <Skills />
-      <Projects />
       <Contact />
       <Footer />
     </div>

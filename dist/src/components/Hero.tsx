@@ -493,11 +493,7 @@ export function Hero() {
             </span>
             <br className="sm:hidden" />
             <span className="hidden sm:inline"> </span>
-            <span className="relative">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Budi Abdul Wahid
-              </span>
-            </span>
+           
           </h1>
         </div>
 

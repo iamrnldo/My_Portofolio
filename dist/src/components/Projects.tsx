@@ -1,53 +1,73 @@
 import { ExternalLink, Github, Folder } from "lucide-react";
+import logo2 from "../img/webgis.png";
+import logo3 from "../img/edusukses.png";
+import logo4 from "../img/siketan.png";
+import logo5 from "../img/pln.png";
+import logo6 from "../img/attendance.png";
+import logo7 from "../img/game.png";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "WebGIS Mapping System",
     description:
-      "A full-stack e-commerce application with product management, shopping cart, user authentication, and payment integration.",
-    tech: ["Laravel", "React JS", "Tailwind CSS", "MySQL"],
-    color: "from-cyan-500 to-blue-600",
-    image: "🛒",
+      "An interactive geographic information system allowing users to visualize spatial data, perform buffer analysis, and manage map layers.",
+    tech: ["Leaflet", "Bootstrap", "Api", "Json", "Php", "Js"],
+    color: "from-green-500 to-emerald-700",
+    image: logo2,
+    isImage: true,
+    // 1. Add the GitHub URL here
+    github: "https://github.com/iamrnldo/Webgis_Keputih",
+    demo: "#", // Optional: You can add a demo link too
   },
   {
-    title: "Task Management App",
+    title: "Tryout Test Platform",
     description:
-      "A collaborative project management tool with real-time updates, task assignments, and progress tracking dashboard.",
+      "A Tryout Test Platform with authentication, question management, and result analysis.",
     tech: ["Node JS", "Express JS", "React JS", "MongoDB"],
     color: "from-purple-500 to-pink-600",
-    image: "📋",
+    image: logo3,
+    isImage: true,
+    github: "https://github.com/yourusername/tryout-platform",
   },
   {
-    title: "Portfolio Website",
+    title: "Archived Website",
     description:
-      "A modern, responsive portfolio website showcasing projects and skills with smooth animations and dark theme.",
+      "An Archived website for Siketan, a web-based platform for online file management and collaboration.",
     tech: ["React JS", "Tailwind CSS", "TypeScript"],
     color: "from-emerald-500 to-teal-600",
-    image: "🌐",
+    image: logo4,
+    isImage: true,
+    github: "https://github.com/yourusername/siketan-archive",
   },
   {
-    title: "Blog CMS Platform",
+    title: "PLN Web Commissioning Management System",
     description:
-      "A content management system with markdown editor, categories, SEO optimization, and admin dashboard.",
-    tech: ["PHP", "Laravel", "Vue.js", "MySQL"],
+      "A web application for PLN to manage commissioning activities and track progress.",
+    tech: ["PHP", "Laravel", "Bootstrap", "MySQL"],
     color: "from-orange-500 to-red-600",
-    image: "📝",
+    image: logo5,
+    isImage: true,
+    github: "https://github.com/yourusername/pln-system",
   },
   {
-    title: "REST API Service",
+    title: "Attendance List Management System",
     description:
-      "A scalable RESTful API with JWT authentication, rate limiting, comprehensive documentation, and automated testing.",
+      "A web application for managing attendance lists and generating reports.",
     tech: ["Node JS", "Express JS", "PostgreSQL"],
     color: "from-blue-500 to-indigo-600",
-    image: "⚡",
+    image: logo6,
+    isImage: true,
+    github: "https://github.com/iamrnldo/Attendance-Laravel",
   },
   {
-    title: "Social Dashboard",
+    title: "Game 1v1 StreetFighterBrawl",
     description:
       "An analytics dashboard for social media metrics with real-time data visualization and reporting features.",
     tech: ["React JS", "Node JS", "Chart.js", "Tailwind CSS"],
     color: "from-pink-500 to-rose-600",
-    image: "📊",
+    image: logo7,
+    isImage: true,
+    github: "https://github.com/yourusername/streetfighter-game",
   },
 ];
 
@@ -57,7 +77,6 @@ export function Projects() {
       <div className="absolute inset-0 bg-linear-to-b from-gray-950 via-gray-900/50 to-gray-950" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1.5 bg-cyan-500/10 text-cyan-400 text-sm font-semibold rounded-full border border-cyan-500/20 mb-4">
             My Projects
@@ -74,14 +93,12 @@ export function Projects() {
           </p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <div
               key={project.title}
               className="group relative bg-white/3 rounded-2xl border border-white/5 hover:border-white/10 overflow-hidden transition-all duration-300 hover:-translate-y-2"
             >
-              {/* Project image/header */}
               <div
                 className={`relative h-48 bg-linear-to-br ${project.color} flex items-center justify-center overflow-hidden`}
               >
@@ -94,22 +111,41 @@ export function Projects() {
                     backgroundSize: "24px 24px",
                   }}
                 />
-                <span className="relative text-6xl group-hover:scale-125 transition-transform duration-300">
-                  {project.image}
-                </span>
+
+                {project.isImage ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-500"
+                  />
+                ) : (
+                  <span className="relative text-6xl group-hover:scale-125 transition-transform duration-300">
+                    {project.image}
+                  </span>
+                )}
 
                 {/* Overlay actions */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                  <button className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors backdrop-blur-sm">
+                  {/* 2. Changed Button to Anchor Tag (<a>) */}
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors backdrop-blur-sm"
+                  >
                     <Github size={20} />
-                  </button>
-                  <button className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors backdrop-blur-sm">
+                  </a>
+
+                  {/* You can do the same for the External Link if you add a 'demo' property */}
+                  <a
+                    href={project.demo || "#"}
+                    className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors backdrop-blur-sm"
+                  >
                     <ExternalLink size={20} />
-                  </button>
+                  </a>
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <Folder size={16} className="text-cyan-400" />
