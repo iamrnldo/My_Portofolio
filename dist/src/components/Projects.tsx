@@ -27,7 +27,7 @@ const projects = [
     color: "from-purple-500 to-pink-600",
     image: logo3,
     isImage: true,
-    github: "https://github.com/yourusername/tryout-platform",
+    github: "https://github.com/iamrnldo/Capstone",
   },
   {
     title: "Archived Website",
@@ -37,7 +37,7 @@ const projects = [
     color: "from-emerald-500 to-teal-600",
     image: logo4,
     isImage: true,
-    github: "https://github.com/yourusername/siketan-archive",
+    github: "https://github.com/iamrnldo/Siketan_fix",
   },
   {
     title: "PLN Web Commissioning Management System",
@@ -47,7 +47,7 @@ const projects = [
     color: "from-orange-500 to-red-600",
     image: logo5,
     isImage: true,
-    github: "https://github.com/yourusername/pln-system",
+    github: "https://github.com/iamrnldo/Laravel_Web_Master_Komisioning",
   },
   {
     title: "Attendance List Management System",
@@ -67,7 +67,7 @@ const projects = [
     color: "from-pink-500 to-rose-600",
     image: logo7,
     isImage: true,
-    github: "https://github.com/yourusername/streetfighter-game",
+    github: "https://github.com/iamrnldo/1vs1StreetFighterBrawler_UAS_PBO",
   },
 ];
 
