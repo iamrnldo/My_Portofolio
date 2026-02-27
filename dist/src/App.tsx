@@ -5,17 +5,20 @@ import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { CustomCursor } from "./components/CustomCursor";
 
 export function App() {
   return (
-    <div className="bg-gray-950 text-white antialiased">
+    <div className="bg-gray-950 text-white antialiased cursor-none">
+      <CustomCursor />
       <Navbar />
       <Hero />
-      <Projects />
       <About />
       <Skills />
+      <Projects />
       <Contact />
       <Footer />
     </div>
   );
 }
+
