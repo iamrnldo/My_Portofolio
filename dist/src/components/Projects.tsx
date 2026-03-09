@@ -5,7 +5,8 @@ interface Project {
   title: string;
   description: string;
   tech: string[];
-  color: string; // gradient color classes
+  color: string; // gradient color classes for overlays
+  accent: string; // solid color class for top accent line
   image: string;
   github?: string;
   demo?: string;
@@ -18,6 +19,7 @@ const projects: Project[] = [
       "An interactive geographic information system allowing users to visualize spatial data, perform buffer analysis, and manage map layers.",
     tech: ["Leaflet", "Bootstrap", "API", "JSON", "PHP", "JavaScript"],
     color: "from-green-500 to-emerald-600",
+    accent: "bg-emerald-400",
     image:
       "https://images.unsplash.com/photo-1502920917128-1aa500764b9e?auto=format&fit=crop&w=1200&q=80",
     github: "https://github.com/iamrnldo/Webgis_Keputih",
@@ -29,6 +31,7 @@ const projects: Project[] = [
       "A tryout platform with authentication, question management, scoring, and detailed result analysis for students.",
     tech: ["Node.js", "Express", "React", "MongoDB"],
     color: "from-purple-500 to-pink-600",
+    accent: "bg-fuchsia-400",
     image:
       "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
     github: "https://github.com/iamrnldo/Capstone",
@@ -39,6 +42,7 @@ const projects: Project[] = [
       "A web-based platform for centralized online file management, versioning, and collaboration across teams.",
     tech: ["React", "Tailwind CSS", "TypeScript"],
     color: "from-emerald-500 to-teal-500",
+    accent: "bg-teal-400",
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
     github: "https://github.com/iamrnldo/Siketan_fix",
@@ -49,6 +53,7 @@ const projects: Project[] = [
       "A web app for PLN to manage commissioning activities, approvals, and progress tracking with role-based access.",
     tech: ["PHP", "Laravel", "Bootstrap", "MySQL"],
     color: "from-orange-500 to-red-500",
+    accent: "bg-orange-400",
     image:
       "https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?auto=format&fit=crop&w=1200&q=80",
     github: "https://github.com/iamrnldo/Laravel_Web_Master_Komisioning",
@@ -59,6 +64,7 @@ const projects: Project[] = [
       "A platform to manage attendance, track presence across sessions, and generate exportable attendance reports.",
     tech: ["Node.js", "Express", "PostgreSQL"],
     color: "from-blue-500 to-indigo-500",
+    accent: "bg-sky-400",
     image:
       "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
     github: "https://github.com/iamrnldo/Attendance-Laravel",
@@ -69,6 +75,7 @@ const projects: Project[] = [
       "A 1v1 fighting game project with character selection, special moves, and dynamic health bar animations.",
     tech: ["Java", "OOP", "Game Loop", "Assets Pipeline"],
     color: "from-pink-500 to-rose-500",
+    accent: "bg-rose-400",
     image:
       "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=1200&q=80",
     github: "https://github.com/iamrnldo/1vs1StreetFighterBrawler_UAS_PBO",
@@ -203,7 +210,7 @@ export function Projects() {
         <div className="relative mt-10">
           {/* Timeline line */}
           <div
-            className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-400/60 via-cyan-400/15 to-transparent md:left-6"
+            className="absolute left-4 md:left-6 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400/70 via-cyan-400/35 to-cyan-400/0"
             aria-hidden="true"
           />
 
@@ -224,10 +231,10 @@ export function Projects() {
                 </div>
 
                 {/* Card */}
-                <article className="relative flex-1 rounded-2xl border border-white/6 bg-gray-900/80 p-5 sm:p-6 md:p-7 shadow-[0_18px_50px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400/40 hover:shadow-[0_20px_60px_rgba(34,211,238,0.25)]">
-                  {/* Accent bar */}
+                <article className="relative flex-1 rounded-2xl border border-white/6 bg-gray-900/80 p-5 sm:p-6 md:p-7 shadow-[0_18px_50px_rgba(0,0,0,0.7)] backdrop-blur-md overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-cyan-400/40 hover:shadow-[0_20px_60px_rgba(34,211,238,0.25)]">
+                  {/* Accent bar - sit inside the card, clipped to rounded corners */}
                   <div
-                    className={`absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r ${project.color}`}
+                    className={`pointer-events-none absolute left-0 right-0 top-px h-1.5 ${project.accent}`}
                   />
 
                   <div className="relative flex flex-col gap-4">
