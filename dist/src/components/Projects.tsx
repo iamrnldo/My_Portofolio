@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { ExternalLink, Github, Folder, X } from "lucide-react";
 
+import webgis from "../img/webgis.png";
+import edusukses from "../img/edusukses.png";
+import siketan from "../img/siketan.png";
+import pln from "../img/pln.png";
+import attendance from "../img/attendance.png";
+import game from "../img/game.png";
+
 interface Project {
   title: string;
   description: string;
@@ -20,8 +27,7 @@ const projects: Project[] = [
     tech: ["Leaflet", "Bootstrap", "API", "JSON", "PHP", "JavaScript"],
     color: "from-green-500 to-emerald-600",
     accent: "bg-emerald-400",
-    image:
-      "https://images.unsplash.com/photo-1502920917128-1aa500764b9e?auto=format&fit=crop&w=1200&q=80",
+    image: webgis,
     github: "https://github.com/iamrnldo/Webgis_Keputih",
     demo: "#",
   },
@@ -32,8 +38,7 @@ const projects: Project[] = [
     tech: ["Node.js", "Express", "React", "MongoDB"],
     color: "from-purple-500 to-pink-600",
     accent: "bg-fuchsia-400",
-    image:
-      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
+    image: edusukses,
     github: "https://github.com/iamrnldo/Capstone",
   },
   {
@@ -43,8 +48,7 @@ const projects: Project[] = [
     tech: ["React", "Tailwind CSS", "TypeScript"],
     color: "from-emerald-500 to-teal-500",
     accent: "bg-teal-400",
-    image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+    image: siketan,
     github: "https://github.com/iamrnldo/Siketan_fix",
   },
   {
@@ -54,8 +58,7 @@ const projects: Project[] = [
     tech: ["PHP", "Laravel", "Bootstrap", "MySQL"],
     color: "from-orange-500 to-red-500",
     accent: "bg-orange-400",
-    image:
-      "https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?auto=format&fit=crop&w=1200&q=80",
+    image: pln,
     github: "https://github.com/iamrnldo/Laravel_Web_Master_Komisioning",
   },
   {
@@ -65,8 +68,7 @@ const projects: Project[] = [
     tech: ["Node.js", "Express", "PostgreSQL"],
     color: "from-blue-500 to-indigo-500",
     accent: "bg-sky-400",
-    image:
-      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80",
+    image: attendance,
     github: "https://github.com/iamrnldo/Attendance-Laravel",
   },
   {
@@ -76,8 +78,7 @@ const projects: Project[] = [
     tech: ["Java", "OOP", "Game Loop", "Assets Pipeline"],
     color: "from-pink-500 to-rose-500",
     accent: "bg-rose-400",
-    image:
-      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=1200&q=80",
+    image: game,
     github: "https://github.com/iamrnldo/1vs1StreetFighterBrawler_UAS_PBO",
   },
 ];
