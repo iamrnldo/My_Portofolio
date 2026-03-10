@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface CursorState {
   x: number;
@@ -22,6 +22,8 @@ export function CustomCursor() {
   });
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const handleMouseMove = (event: MouseEvent) => {
       setState((prev) => ({
         ...prev,
@@ -31,11 +33,21 @@ export function CustomCursor() {
       }));
     };
 
-    const handleMouseEnter = () => {
-      setState((prev) => ({ ...prev, visible: true }));
+    // When mouse truly leaves the window (e.g. to another monitor / outside browser)
+    const handleMouseOut = (event: MouseEvent) => {
+      const nativeEvent = event as MouseEvent & {
+        toElement?: EventTarget | null;
+      };
+      const toElement = (nativeEvent.relatedTarget ||
+        nativeEvent.toElement) as Node | null;
+      if (!toElement) {
+        // Pointer left the browser window completely
+        setState((prev) => ({ ...prev, visible: false }));
+      }
     };
 
-    const handleMouseLeave = () => {
+    const handleBlur = () => {
+      // Window lost focus (Alt+Tab, switched app) -> hide cursor
       setState((prev) => ({ ...prev, visible: false }));
     };
 
@@ -52,21 +64,23 @@ export function CustomCursor() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseenter", handleMouseEnter);
-    window.addEventListener("mouseleave", handleMouseLeave);
+    window.addEventListener("mouseout", handleMouseOut);
+    window.addEventListener("blur", handleBlur);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseenter", handleMouseEnter);
-      window.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("mouseout", handleMouseOut);
+      window.removeEventListener("blur", handleBlur);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
     };
   }, []);
 
   useEffect(() => {
+    if (typeof document === "undefined") return;
+
     const selector =
       "a, button, [role='button'], [data-cursor='interactive'], input[type='submit'], .cursor-interactive";
     const interactive = document.querySelectorAll<HTMLElement>(selector);
@@ -94,7 +108,7 @@ export function CustomCursor() {
 
   const { x, y, visible, isDown, isInteractive } = state;
 
-  // Dont render the custom cursor on touch-only devices
+  // Don't render the custom cursor on touch-only devices
   if (typeof window !== "undefined" && window.matchMedia) {
     const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
     if (!hasFinePointer) return null;

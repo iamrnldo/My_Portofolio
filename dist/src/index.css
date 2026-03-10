@@ -114,3 +114,21 @@ a,
   pointer-events: none;
   mix-blend-mode: screen;
 }
+
+.cursor-ring {
+  /* ... */
+  transition:
+    transform 120ms ease-out,
+    opacity 200ms ease-out,
+    border-color 200ms ease-out,
+    box-shadow 200ms ease-out;
+}
+
+.cursor-dot {
+  /* ... */
+  transition:
+    transform 120ms ease-out,
+    opacity 200ms ease-out,
+    background-color 200ms ease-out,
+    box-shadow 200ms ease-out;
+}
